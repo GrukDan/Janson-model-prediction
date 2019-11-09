@@ -1,0 +1,5 @@
+.home_anchor {
+    -fx-background-image:url('homeBackgr.jpg');
+    -fx-background-size: cover;
+
+}

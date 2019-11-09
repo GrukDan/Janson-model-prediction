@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="637.0" maxWidth="1157.0" minHeight="517.0" minWidth="734.0" prefHeight="607.0" prefWidth="1157.0" style="-fx-background-color: #393645; -fx-border-color: E3942C; -fx-border-width: 5; -fx-padding: 5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ScrollPane layoutX="7.0" layoutY="76.0" prefHeight="416.0" prefWidth="1141.0">
+         <content>
+            <TableView fx:id="table" prefHeight="413.0" prefWidth="1132.0">
+              <columns>
+                <TableColumn fx:id="colDate" prefWidth="75.0" text="Дата" />
+                <TableColumn fx:id="colKacca" prefWidth="75.0" text="Касса" />
+                  <TableColumn fx:id="colRaschChet" prefWidth="75.0" text="Рассч.счет" />
+                  <TableColumn fx:id="colValChet" prefWidth="75.0" text="Валют.счет" />
+                  <TableColumn fx:id="colUstavCapital" prefWidth="75.0" text="Уставн.капитал" />
+                  <TableColumn fx:id="colNeraspPrib" prefWidth="75.0" text="Нераспределенная прибыль" />
+                  <TableColumn fx:id="colReserv" prefWidth="75.0" text="Резервы" />
+                  <TableColumn fx:id="colAmmortFond" prefWidth="75.0" text="Амморт.фонд" />
+                  <TableColumn fx:id="colDebit" prefWidth="75.0" text="Дебит" />
+                  <TableColumn fx:id="colZennyiBumagi" prefWidth="75.0" text="Ценные бумаги" />
+                  <TableColumn fx:id="colKratkDolg" prefWidth="75.0" text="Краткосрочные задолжности" />
+                  <TableColumn fx:id="colDolgDolg" prefWidth="75.0" text="Долгосрочные задолжн." />
+                  <TableColumn fx:id="colValutaNetto" prefWidth="75.0" text="Валюта баланса-нетто" />
+                  <TableColumn fx:id="colOsnSredstva" prefWidth="75.0" text="Основные средства" />
+                  <TableColumn fx:id="colDrugieInvest" prefWidth="75.0" text="Другие инвестиции" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="537.0" prefWidth="723.0" style="-fx-background-color: #393645; -fx-border-color: E3942C; -fx-border-width: 5; -fx-padding: 5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.GUI.homeWindow.HomeWindowController">
+   <children>
+      <AnchorPane layoutX="23.0" layoutY="26.0" prefHeight="492.0" prefWidth="678.0" styleClass="home_anchor" stylesheets="@style.css">
+         <children>
+            <Button fx:id="accControlButton" layoutX="59.0" layoutY="41.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="280.0" text="Управление аккаунтом">
+               <font>
+                  <Font name="Times New Roman Bold" size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="dbControlButton" layoutX="59.0" layoutY="148.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="280.0" text="Управление базой данных">
+               <font>
+                  <Font name="Times New Roman Bold" size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="liquidButton" layoutX="59.0" layoutY="246.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="280.0" text="Показатели ликвидности">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="activityButton" layoutX="59.0" layoutY="352.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="280.0" text="Показатели деловой активности">
+               <font>
+                  <Font name="Times New Roman Bold" size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="exitButton" layoutX="581.0" layoutY="452.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Выход">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

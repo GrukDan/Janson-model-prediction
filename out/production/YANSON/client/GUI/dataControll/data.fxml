@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="637.0" maxWidth="1176.0" minHeight="517.0" minWidth="734.0" prefHeight="607.0" prefWidth="1176.0" style="-fx-background-color: #393645; -fx-border-color: E3942C; -fx-border-width: 5; -fx-padding: 5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView fx:id="table" layoutX="8.0" layoutY="59.0" prefHeight="389.0" prefWidth="1155.0">
+        <columns>
+          <TableColumn fx:id="colDate" prefWidth="75.0" text="Дата" />
+          <TableColumn fx:id="colKacca" prefWidth="75.0" text="Касса" />
+            <TableColumn fx:id="colRaschChet" prefWidth="75.0" text="Рассч.счет" />
+            <TableColumn fx:id="colValChet" prefWidth="75.0" text="Валют.счет" />
+            <TableColumn fx:id="colUstavCapital" prefWidth="75.0" text="Уставн.капитал" />
+            <TableColumn fx:id="colNeraspPrib" prefWidth="75.0" text="Нераспределенная прибыль" />
+            <TableColumn fx:id="colReserv" prefWidth="75.0" text="Резервы" />
+            <TableColumn fx:id="colAmmortFond" prefWidth="75.0" text="Амморт.фонд" />
+            <TableColumn fx:id="colDebit" prefWidth="75.0" text="Дебит" />
+            <TableColumn fx:id="colZennyiBumagi" prefWidth="75.0" text="Ценные бумаги" />
+            <TableColumn fx:id="colKratkDolg" prefWidth="75.0" text="Краткосрочные задолжности" />
+            <TableColumn fx:id="colDolgDolg" prefWidth="75.0" text="Долгосрочные задолжн." />
+            <TableColumn fx:id="colValutaNetto" prefWidth="75.0" text="Валюта баланса-нетто" />
+            <TableColumn fx:id="colOsnSredstva" prefWidth="84.0" text="Основные средства" />
+            <TableColumn fx:id="colDrugieInvest" prefWidth="93.0" text="Другие инвестиции" />
+        </columns>
+      </TableView>
+      <TextField fx:id="kacca" layoutX="91.0" layoutY="499.0" prefHeight="25.0" prefWidth="67.0" />
+      <DatePicker fx:id="date" layoutX="8.0" layoutY="499.0" prefHeight="25.0" prefWidth="83.0" />
+      <TextField fx:id="valytnyShet" layoutX="232.0" layoutY="499.0" prefHeight="25.0" prefWidth="83.0" />
+      <TextField fx:id="raschetShet" layoutX="158.0" layoutY="499.0" prefHeight="25.0" prefWidth="76.0" />
+      <TextField fx:id="ustavCapital" layoutX="315.0" layoutY="499.0" prefHeight="25.0" prefWidth="67.0" />
+      <TextField fx:id="neraspredPrib" layoutX="382.0" layoutY="499.0" prefHeight="25.0" prefWidth="76.0" />
+      <TextField fx:id="reservy" layoutX="453.0" layoutY="499.0" prefHeight="25.0" prefWidth="83.0" />
+      <TextField fx:id="ammortFond" layoutX="531.0" layoutY="499.0" prefHeight="25.0" prefWidth="83.0" />
+      <TextField fx:id="debit" layoutX="614.0" layoutY="499.0" prefHeight="25.0" prefWidth="76.0" />
+      <TextField fx:id="zennyiBumagi" layoutX="690.0" layoutY="499.0" prefHeight="25.0" prefWidth="76.0" />
+      <TextField fx:id="kratkDolgi" layoutX="766.0" layoutY="499.0" prefHeight="25.0" prefWidth="83.0" />
+      <TextField fx:id="dolgDolgi" layoutX="849.0" layoutY="499.0" prefHeight="25.0" prefWidth="95.0" />
+      <TextField fx:id="valytBalansNetto" layoutX="944.0" layoutY="499.0" prefHeight="25.0" prefWidth="67.0" />
+      <TextField fx:id="osnovSredstva" layoutX="1011.0" layoutY="499.0" prefHeight="25.0" prefWidth="67.0" />
+      <TextField fx:id="drugiyeInvest" layoutX="1078.0" layoutY="499.0" prefHeight="25.0" prefWidth="83.0" />
+      <Label layoutX="14.0" layoutY="476.0" prefHeight="17.0" prefWidth="58.0" text="Дата" textFill="#ffd700">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="91.0" layoutY="476.0" prefHeight="17.0" prefWidth="58.0" text="Касса" textFill="#ffd700">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="158.0" layoutY="476.0" prefHeight="20.0" prefWidth="67.0" text="Рассчетюсчет" textFill="#ffd700">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="232.0" layoutY="476.0" prefHeight="20.0" prefWidth="83.0" text="Валют.счет" textFill="#ffd700">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="315.0" layoutY="476.0" prefHeight="20.0" prefWidth="67.0" text="Устав.капитал" textFill="#ffd700">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="382.0" layoutY="476.0" prefHeight="20.0" prefWidth="76.0" text="Нераспред.прибыль" textFill="#ffd700">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="469.0" layoutY="476.0" prefHeight="20.0" prefWidth="67.0" text="Резервы" textFill="#ffd700">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="538.0" layoutY="476.0" prefHeight="20.0" prefWidth="76.0" text="Амморт.фонд" textFill="#ffd700">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="619.0" layoutY="476.0" prefHeight="20.0" prefWidth="67.0" text="Дебит" textFill="#ffd700">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="690.0" layoutY="476.0" prefHeight="20.0" prefWidth="76.0" text="Ценные бумаги" textFill="#ffd700">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="766.0" layoutY="476.0" prefHeight="20.0" prefWidth="83.0" text="Краткосрочные долги" textFill="#ffd700">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="849.0" layoutY="476.0" prefHeight="20.0" prefWidth="95.0" text="Долгосрочные долги" textFill="#ffd700">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="944.0" layoutY="476.0" prefHeight="20.0" prefWidth="67.0" text="Валюта баланса-нетто" textFill="#ffd700">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="1011.0" layoutY="476.0" prefHeight="20.0" prefWidth="67.0" text="Основные средства" textFill="#ffd700">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="1078.0" layoutY="476.0" prefHeight="20.0" prefWidth="83.0" text="Другие инвест." textFill="#ffd700">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="infoLabel" layoutX="12.0" layoutY="549.0" prefHeight="30.0" prefWidth="263.0" textFill="RED">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="addButton" layoutX="290.0" layoutY="542.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="163.0" style="-fx-background-color: F39C29; -fx-background-radius: 30; -fx-border-radius: 30;" text="Добавить" onAction="#addControl">
+         <font>
+            <Font name="Times New Roman Bold" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="saveButton" layoutX="469.0" layoutY="542.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="163.0" style="-fx-background-color: F39C29; -fx-background-radius: 30; -fx-border-radius: 30;" text="Сохранить">
+         <font>
+            <Font name="Times New Roman Bold" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="deleteButton" layoutX="647.0" layoutY="542.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="163.0" style="-fx-background-color: F39C29; -fx-background-radius: 30; -fx-border-radius: 30;" text="Удалить">
+         <font>
+            <Font name="Times New Roman Bold" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="backButton" layoutX="826.0" layoutY="542.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="163.0" style="-fx-background-color: F39C29; -fx-background-radius: 30; -fx-border-radius: 30;" text="Назад">
+         <font>
+            <Font name="Times New Roman Bold" size="22.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

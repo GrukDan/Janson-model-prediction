@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="517.0" maxWidth="734.0" minHeight="517.0" minWidth="734.0" prefHeight="517.0" prefWidth="734.0" style="-fx-background-color: #393645; -fx-border-color: E3942C; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
+    <children>
+        <AnchorPane layoutY="140.0" prefHeight="377.0" prefWidth="734.0" style="-fx-background-color: #DAD8E2; -fx-border-color: E3942C; -fx-border-width: 5;">
+            <children>
+                <TextField fx:id="loginField" layoutX="234.0" layoutY="189.0" prefHeight="37.0" prefWidth="267.0" promptText="Логин" />
+                <PasswordField fx:id="passwordField" layoutX="235.0" layoutY="244.0" prefHeight="37.0" prefWidth="267.0" promptText="Пароль" />
+                <Label layoutX="276.0" layoutY="14.0" prefHeight="46.0" prefWidth="186.0" text="Регистрация" textFill="#252728">
+                    <font>
+                        <Font name="Times New Roman" size="32.0" />
+                    </font>
+                </Label>
+                <Button fx:id="logInButton" layoutX="247.0" layoutY="312.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="241.0" style="-fx-background-color: F39C29; -fx-background-radius: 33; -fx-border-radius: 33; -fx-border-width: 4; -fx-border-color: #D5CCC0;" onAction="#registration" text="Зарегестрироваться">
+                    <font>
+                        <Font name="Times New Roman" size="23.0" />
+                    </font>
+                </Button>
+            <TextField fx:id="surnameField" layoutX="234.0" layoutY="124.0" prefHeight="37.0" prefWidth="267.0" promptText="Фамилия" />
+            <TextField fx:id="nameField" layoutX="234.0" layoutY="60.0" prefHeight="37.0" prefWidth="267.0" promptText="Имя" />
+            <Label fx:id="nameLabel" layoutX="501.0" layoutY="59.0" prefHeight="37.0" prefWidth="195.0" textFill="RED" />
+            <Label fx:id="loginLabel" layoutX="501.0" layoutY="189.0" prefHeight="37.0" prefWidth="195.0" textFill="RED" />
+            <Label fx:id="surnameLabel" layoutX="501.0" layoutY="124.0" prefHeight="37.0" prefWidth="195.0" textFill="RED" />
+            <Label fx:id="passwordLabel" layoutX="501.0" layoutY="244.0" prefHeight="37.0" prefWidth="195.0" textFill="RED" />
+            </children>
+        </AnchorPane>
+        <Label layoutX="60.0" layoutY="37.0" prefHeight="81.0" prefWidth="652.0" text="Прогнозирование устойчивости " textFill="#ddd2d2">
+            <font>
+                <Font name="Times New Roman" size="47.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
