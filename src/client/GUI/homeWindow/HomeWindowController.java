@@ -4,8 +4,7 @@
 
 package client.GUI.homeWindow;
 
-import client.GUI.dataControll.DataController;
-import com.google.gson.Gson;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,8 +12,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 
 public class HomeWindowController {
@@ -34,35 +31,89 @@ public class HomeWindowController {
     @FXML // fx:id="exitButton"
     private Button exitButton; // Value injected by FXMLLoader
 
-    BufferedWriter bw;
-    BufferedReader br;
-    Gson gson;
 
-    public HomeWindowController(BufferedWriter bufferedWriter, BufferedReader bufferedReader){
-        this.bw = bufferedWriter;
-        this.br = bufferedReader;
-        this.gson = new Gson();
+    public HomeWindowController() {
     }
 
-
+    @FXML
     public void dbControl(javafx.event.ActionEvent actionEvent) {
-       // dbControlButton.getScene().getWindow().hide();
-
-        FXMLLoader fxmlLoader = new FXMLLoader(DataController.class.getResource("data.fxml"));
-
-        DataController dataController = new DataController(bw,br);
-        fxmlLoader.setController(dataController);
-
+        dbControlButton.getScene().getWindow().hide();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("../dataControll/data.fxml"));
         try {
-            fxmlLoader.load();
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setTitle("Прогнозирование устойчивости предприятия");
+            stage.setScene(scene);
+            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Parent root = fxmlLoader.getRoot();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.setTitle("Прогнозирование устойчивости предприятия");
-        stage.showAndWait();
+    }
+
+    @FXML
+    public void exit(ActionEvent actionEvent) {
+        exitButton.getScene().getWindow().hide();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("../logIn/logIn.fxml"));
+        try {
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setTitle("Прогнозирование устойчивости предприятия");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void businessPerformance(ActionEvent actionEvent) {
+        liquidButton.getScene().getWindow().hide();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("../businessPerformance/BusinessPerformance.fxml"));
+        try {
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setTitle("Прогнозирование устойчивости предприятия");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @FXML
+    public void liquidityRatios(ActionEvent actionEvent) {
+        liquidButton.getScene().getWindow().hide();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("../liquidityRatios/LiquidityRatios.fxml"));
+        try {
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setTitle("Прогнозирование устойчивости предприятия");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void accountManagment(ActionEvent actionEvent) {
+
+        accControlButton.getScene().getWindow().hide();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("../accountManagement/AccountManagement.fxml"));
+        try {
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setTitle("Прогнозирование устойчивости предприятия");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="724.0" prefWidth="1012.0" style="-fx-background-color: #bcb8d4; -fx-border-color: E3942C; -fx-border-width: 7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.GUI.businessPerformance.coefficients.coefficientOfIndependence.CoefficientOfIndependence">
+   <children>
+      <LineChart fx:id="lineChart" layoutY="166.0" prefHeight="487.0" prefWidth="557.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <TableView fx:id="activeAndPassiveTable" layoutX="579.0" layoutY="184.0" prefHeight="226.0" prefWidth="378.0">
+        <columns>
+          <TableColumn fx:id="activeCol" prefWidth="129.0" text="Активы" />
+          <TableColumn fx:id="passiveCol" prefWidth="104.0" text="Пассивы" />
+            <TableColumn fx:id="relativeCol" prefWidth="143.0" text="Активы/Пассивы" />
+        </columns>
+      </TableView>
+      <ListView fx:id="dateBegin" layoutX="25.0" layoutY="55.0" prefHeight="103.0" prefWidth="243.0" />
+      <ListView fx:id="dateEnd" layoutX="304.0" layoutY="55.0" prefHeight="103.0" prefWidth="243.0" />
+      <Label layoutX="25.0" layoutY="29.0" prefHeight="17.0" prefWidth="243.0" text="Дата начала выборки данных">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="294.0" layoutY="29.0" prefHeight="20.0" prefWidth="263.0" text="Дата окончания выборки данных">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="579.0" layoutY="29.0" prefHeight="18.0" prefWidth="215.0" text="Срок прогнозирования(дней):">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="backButton" layoutX="816.0" layoutY="653.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="141.0" text="Назад">
+         <font>
+            <Font name="Times New Roman Bold" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="prognosisButton" layoutX="687.0" layoutY="92.0" mnemonicParsing="false" onAction="#prognosisAction" prefHeight="44.0" prefWidth="186.0" text="Прогноз">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Button>
+      <TextField fx:id="periodField" layoutX="800.0" layoutY="26.0" />
+      <ListView fx:id="resultViewList" layoutX="579.0" layoutY="468.0" prefHeight="161.0" prefWidth="378.0" />
+      <Label layoutX="579.0" layoutY="438.0" prefHeight="17.0" prefWidth="234.0" text="Результат:">
+         <font>
+            <Font name="Times New Roman Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="infoLabel" layoutX="579.0" layoutY="150.0" prefHeight="25.0" prefWidth="378.0" textFill="RED">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

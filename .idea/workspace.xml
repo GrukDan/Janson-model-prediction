@@ -1,7 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/accountManagement/AccountManagement.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/accountManagement/AccountManagement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/BusinessPerformance.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/BusinessPerformance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/CoefficientOfInvestmentOfOwnSources/CoefficientOfInvestmentOfOwnSources.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/CoefficientOfInvestmentOfOwnSources/CoefficientOfInvestmentOfOwnSources.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/coefficientOfFinancing/CoefficientOfFinancing.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/coefficientOfFinancing/CoefficientOfFinancing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/coefficientOfIndependence/CoefficientOfIndependence.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/coefficientOfIndependence/CoefficientOfIndependence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/financialStabilityRatio/FinancialStabilityRatio.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/financialStabilityRatio/FinancialStabilityRatio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/investmentRatio/InvestmentRatio.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/investmentRatio/InvestmentRatio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/liquidityRatios/LiquidityRatios.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/liquidityRatios/LiquidityRatios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/Objects/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/Objects/Transfer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/database/entities/Record.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/database/entities/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/dataControll/DataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/dataControll/DataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/dataControll/data.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/dataControll/data.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/homeWindow/HomeWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/homeWindow/HomeWindowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/homeWindow/data2.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/homeWindow/homeWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/homeWindow/homeWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/logIn/LogInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/logIn/LogInController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/registration/RegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/registration/RegistrationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/registration/registration.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/registration/registration.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/resources/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/resources/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/Objects/Record.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/Objects/Record.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/Objects/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/Objects/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/server/Controller/RequestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/server/Controller/RequestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/server/database/DatabaseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/server/database/DatabaseHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/server/database/entities/BusinessActivityParam.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/server/database/entities/SourcesOfEquityEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/server/database/entities/SourcesOfEquityEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/dataControll/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/dataControll/DataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/dataControll/data.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/dataControll/data.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/homeWindow/HomeWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/homeWindow/HomeWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/homeWindow/data2.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/homeWindow/homeWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/homeWindow/homeWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/logIn/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/logIn/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/registration/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/registration/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/registration/registration.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/registration/registration.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/resources/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/resources/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Objects/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Objects/Record.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Objects/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Objects/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/Controller/RequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Controller/RequestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/database/DatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/database/DatabaseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/database/entities/BusinessActivityParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/database/entities/BusinessActivityParamEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/database/entities/SourcesOfEquityEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/database/entities/SourcesOfEquityEntity.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,6 +65,36 @@
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="kursdb@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="kursdb@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="kursdb@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="kursdb: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="DebuggerManager">
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
@@ -56,8 +141,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -66,12 +151,19 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1TIO2eJ73Llh6sKxZ0WjyQtMxFA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -83,6 +175,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
@@ -92,17 +185,22 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.33563218" />
     <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Benutzer\JAVA_2sem\YANSON\src\client\GUI\homeWindow" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Benutzer\JAVA_2sem\YANSON\src\client\GUI\businessPerformance\coefficients\coefficientOfIndependence\coefficientOfIndependence" />
       <recent name="C:\Users\Benutzer\JAVA_2sem\YANSON\src\client\GUI\homeWindow\homeWindow" />
       <recent name="C:\Users\Benutzer\JAVA_2sem\YANSON\src\client\GUI\homeWindow" />
       <recent name="C:\Users\Benutzer\JAVA_2sem\YANSON\src\client\homeWindow" />
       <recent name="C:\Users\Benutzer\JAVA_2sem\YANSON\src\client\logIn" />
-      <recent name="C:\Users\Benutzer\JAVA_2sem\YANSON\src\client" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="client.Objects" />
+      <recent name="server.database.entities" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Benutzer\JAVA_2sem\YANSON\src\client\GUI\homeWindow" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -136,10 +234,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application">
+    <configuration name="Main" type="Application" factoryName="Application" singleton="false">
       <option name="MAIN_CLASS_NAME" value="client.Main" />
       <module name="YANSON" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="client.GUI.homeWindow.logIn.*" />
@@ -203,11 +300,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.RunServer" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.RunServer" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -224,11 +335,40 @@
       <workItem from="1573221346398" duration="25879000" />
       <workItem from="1573292611721" duration="26504000" />
       <workItem from="1573334787295" duration="1006000" />
+      <workItem from="1573381226054" duration="607000" />
+      <workItem from="1573402391289" duration="1408000" />
+      <workItem from="1573413954240" duration="4251000" />
+      <workItem from="1573499228278" duration="8960000" />
+      <workItem from="1573566522735" duration="805000" />
+      <workItem from="1573572867888" duration="36000" />
+      <workItem from="1573760228079" duration="5172000" />
+      <workItem from="1573804084976" duration="384000" />
+      <workItem from="1573821096750" duration="1038000" />
+      <workItem from="1573822468161" duration="978000" />
+      <workItem from="1574249757875" duration="790000" />
+      <workItem from="1574858078049" duration="44000" />
+      <workItem from="1574861255697" duration="36000" />
+      <workItem from="1575111135017" duration="4855000" />
+      <workItem from="1575119488361" duration="22887000" />
+      <workItem from="1575198128162" duration="19989000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />

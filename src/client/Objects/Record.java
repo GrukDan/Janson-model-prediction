@@ -44,6 +44,29 @@ public class Record { //для пересылки данных и вывода �
 
     public Record(){}
 
+    public Record(Record record){
+        this.date = record.date;
+        this.cash = record.cash;
+        this.paymentAccount = record.paymentAccount;
+        this.currencyAccount = record.currencyAccount;
+        this.authorizedCapital = record.authorizedCapital;
+        this.undesterbutedProfits = record.undesterbutedProfits;
+        this.reserves = record.reserves;
+        this.sinkingFund = record.sinkingFund;
+        this.accountsReceivable = record.accountsReceivable;
+        this.securites = record.securites;
+        this.shorttermDebt = record.shorttermDebt;
+        this.longtermDebt = record.longtermDebt;
+        this.netBalanceCurrency = record.netBalanceCurrency;
+        this.fixedAssets = record.fixedAssets;
+        this.otherInvestments = record.otherInvestments;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
     @Override
     public String toString() {
         return "Record{" +

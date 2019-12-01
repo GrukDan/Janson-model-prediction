@@ -1,6 +1,6 @@
 package server.database.entities;
 
-public class BusinessActivityParam {
+public class BusinessActivityParamEntity {
     public static String BUSINESS_ACTIVITY_PARAM_TABLE = "business_activity_param";
     public static String DATE = "date";
     public static String NET_BALANCE_CURRENCY = "net_balance_currency";

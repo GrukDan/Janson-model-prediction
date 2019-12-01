@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="517.0" maxWidth="734.0" minHeight="517.0" minWidth="734.0" prefHeight="517.0" prefWidth="734.0" style="-fx-background-color: #393645; -fx-border-color: E3942C; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.GUI.accountManagement.AccountManagement">
+    <children>
+        <AnchorPane layoutY="140.0" prefHeight="377.0" prefWidth="734.0" style="-fx-background-color: #DAD8E2; -fx-border-color: E3942C; -fx-border-width: 5;" styleClass="account_managment_image" stylesheets="@../resources/style.css">
+            <children>
+                <TextField fx:id="loginField" layoutX="22.0" layoutY="190.0" prefHeight="37.0" prefWidth="267.0" promptText="Логин" />
+                <PasswordField fx:id="passwordField" layoutX="23.0" layoutY="245.0" prefHeight="37.0" prefWidth="267.0" promptText="Пароль" />
+                <Button fx:id="saveButton" layoutX="36.0" layoutY="302.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="241.0" style="-fx-background-color: F39C29; -fx-background-radius: 33; -fx-border-radius: 33; -fx-border-width: 4; -fx-border-color: #D5CCC0;" onAction="#saveAction" text="Сохранить">
+                    <font>
+                        <Font name="Times New Roman" size="23.0" />
+                    </font>
+                </Button>
+                <TextField fx:id="surnameField" layoutX="22.0" layoutY="125.0" prefHeight="37.0" prefWidth="267.0" promptText="Фамилия" />
+                <TextField fx:id="nameField" layoutX="22.0" layoutY="61.0" prefHeight="37.0" prefWidth="267.0" promptText="Имя" />
+                <Label fx:id="nameLabel" layoutX="289.0" layoutY="60.0" prefHeight="37.0" prefWidth="342.0" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font></Label>
+                <Label fx:id="loginLabel" layoutX="289.0" layoutY="190.0" prefHeight="37.0" prefWidth="342.0" textFill="RED">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+                <Label fx:id="surnameLabel" layoutX="289.0" layoutY="125.0" prefHeight="37.0" prefWidth="342.0" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font></Label>
+                <Label fx:id="passwordLabel" layoutX="289.0" layoutY="245.0" prefHeight="37.0" prefWidth="342.0" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font></Label>
+            <Button fx:id="backButton" layoutX="460.0" layoutY="313.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="116.0" style="-fx-background-color: F39C29; -fx-background-radius: 33; -fx-border-radius: 33; -fx-border-width: 4; -fx-border-color: #D5CCC0;" onAction="#backAction" text="Назад">
+               <font>
+                  <Font name="Times New Roman" size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="deleteButton" layoutX="327.0" layoutY="313.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="116.0" style="-fx-background-color: F39C29; -fx-background-radius: 33; -fx-border-radius: 33; -fx-border-width: 4; -fx-border-color: #D5CCC0;" onAction="#deleteAction" text="Удалить">
+               <font>
+                  <Font name="Times New Roman" size="17.0" />
+               </font>
+            </Button>
+            </children>
+        </AnchorPane>
+        <Label layoutX="149.0" layoutY="37.0" prefHeight="81.0" prefWidth="537.0" text="Управление аккаунтом" textFill="#ddd2d2">
+            <font>
+                <Font name="Times New Roman" size="47.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

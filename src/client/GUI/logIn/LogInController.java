@@ -4,8 +4,7 @@ package client.GUI.logIn;
  * Sample Skeleton for 'logIn.fxml' Controller Class
  */
 
-import client.GUI.homeWindow.HomeWindowController;
-import client.GUI.registration.RegistrationController;
+import client.Objects.Transfer;
 import client.Objects.User;
 import com.google.gson.Gson;
 import javafx.event.ActionEvent;
@@ -59,9 +58,9 @@ public class LogInController {
         } else passLabel.setText("");
         if (flag == 0) {
             try {
-                bw.write("авторизация");
-                bw.newLine();
-                bw.flush();
+                Transfer.getBw().write("авторизация");
+                Transfer.getBw().newLine();
+                Transfer.getBw().flush();
 
                 User user = new User();
                 user.setLogin(loginField.getText().trim().toLowerCase());
@@ -70,28 +69,23 @@ public class LogInController {
                 Gson gson = new Gson();
                 String gsonString = gson.toJson(user);
 
-                bw.write(gsonString);
-                bw.newLine();
-                bw.flush();
+                Transfer.getBw().write(gsonString);
+                Transfer.getBw().newLine();
+                Transfer.getBw().flush();
 
-                String response = br.readLine();
-                if(response.equals("200")){
-                    System.out.println("status 200 ok");
+                String response = Transfer.getBr().readLine();
+                if (response.equals("200")) {
                     logInButton.getScene().getWindow().hide();
 
-                    FXMLLoader fxmlLoader = new FXMLLoader(HomeWindowController.class.getResource("homeWindow.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    fxmlLoader.setLocation(getClass().getResource("../homeWindow/homeWindow.fxml"));
 
-                    HomeWindowController homeWindowController = new HomeWindowController(bw,br);
-                    fxmlLoader.setController(homeWindowController);
-
-                    fxmlLoader.load();
-                    Parent root = fxmlLoader.getRoot();
+                    Scene scene = new Scene(fxmlLoader.load());
                     Stage stage = new Stage();
-                    stage.setScene(new Scene(root));
                     stage.setTitle("Прогнозирование устойчивости предприятия");
-                    stage.showAndWait();
-                }
-                else if(response.equals("500")){
+                    stage.setScene(scene);
+                    stage.show();
+                } else if (response.equals("500")) {
                     finalLabel.setText("Логин или пароль введены неверно");
                 }
             } catch (IOException e) {
@@ -103,12 +97,8 @@ public class LogInController {
     @FXML
     private void registration(ActionEvent event) {
         registrButton.getScene().getWindow().hide();
-
-        FXMLLoader fxmlLoader = new FXMLLoader(RegistrationController.class.getResource("registration.fxml"));
-
-        RegistrationController registrationController = new RegistrationController(bw,br);
-        fxmlLoader.setController(registrationController);
-
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("../registration/registration.fxml"));
         try {
             fxmlLoader.load();
         } catch (IOException e) {
@@ -123,14 +113,13 @@ public class LogInController {
     }
 
     Socket socket;
-    BufferedWriter bw;
-    BufferedReader br;
 
     public LogInController() {
         try {
             socket = new Socket("localhost", 8080);
-            bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-            br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            Transfer.setBr(new BufferedReader(new InputStreamReader(socket.getInputStream())));
+            Transfer.setBw(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())));
+            Transfer.setGson(new Gson());
         } catch (UnknownHostException e) {
             e.printStackTrace();
         } catch (IOException e) {

@@ -4,21 +4,23 @@
 
 package client.GUI.registration;
 
+import client.Objects.Transfer;
 import client.Objects.User;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 
-public class RegistrationController  {
+public class RegistrationController {
 
     @FXML // fx:id="loginField"
     private TextField loginField; // Value injected by FXMLLoader
@@ -48,54 +50,60 @@ public class RegistrationController  {
     private Label passwordLabel; // Value injected by FXMLLoader
 
 
-    BufferedWriter bw;
-    BufferedReader br;
-    Gson gson;
+    public RegistrationController(){}
 
-    public RegistrationController(BufferedWriter bufferedWriter, BufferedReader bufferedReader){
-        this.bw = bufferedWriter;
-        this.br = bufferedReader;
-        this.gson = new Gson();
-    }
-
-   public void registration(ActionEvent event){
+    public void registration(ActionEvent event) {
         int flag = 0;
-        if(nameField.getText().trim().equalsIgnoreCase("")){
+        if (nameField.getText().trim().equalsIgnoreCase("")) {
             nameLabel.setText("Введите имя");
             flag++;
-        }else nameLabel.setText("");
-       if(surnameField.getText().trim().equalsIgnoreCase("")){
-           nameLabel.setText("Введите фамилию");
-           flag++;
-       }else surnameLabel.setText("");
-       if(loginField.getText().trim().equalsIgnoreCase("")){
-           loginLabel.setText("Введите логин");
-           flag++;
-       }else loginLabel.setText("");
-       if(passwordField.getText().trim().equalsIgnoreCase("")){
-           passwordLabel.setText("Введите пароль");
-           flag++;
-       }else passwordLabel.setText("");
+        } else nameLabel.setText("");
+        if (surnameField.getText().trim().equalsIgnoreCase("")) {
+            nameLabel.setText("Введите фамилию");
+            flag++;
+        } else surnameLabel.setText("");
+        if (loginField.getText().trim().equalsIgnoreCase("")) {
+            loginLabel.setText("Введите логин");
+            flag++;
+        } else loginLabel.setText("");
+        if (passwordField.getText().trim().equalsIgnoreCase("")) {
+            passwordLabel.setText("Введите пароль");
+            flag++;
+        } else passwordLabel.setText("");
 
-        if(flag==0) {
+        if (flag == 0) {
             try {
-                bw.write("регистрация");
-                bw.newLine();
-                bw.flush();
+                Transfer.getBw().write("регистрация");
+                Transfer.getBw().newLine();
+                Transfer.getBw().flush();
 
-                String gsonUser = gson.toJson(
+                String gsonUser = Transfer.getGson().toJson(
                         new User(nameField.getText(),
-                        surnameField.getText(),"user",
-                        loginField.getText(),passwordField.getText()));
+                                surnameField.getText(), "user",
+                                loginField.getText(), passwordField.getText()));
 
-                bw.write(gsonUser);
-                bw.newLine();
-                bw.flush();
+                Transfer.getBw().write(gsonUser);
+                Transfer.getBw().newLine();
+                Transfer.getBw().flush();
+
+                String response = Transfer.getBr().readLine();
+                if (response.trim().equalsIgnoreCase("200")) {
+                    logInButton.getScene().getWindow().hide();
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    fxmlLoader.setLocation(getClass().getResource("../homeWindow/homeWindow.fxml"));
+                    Scene scene = new Scene(fxmlLoader.load());
+                    Stage stage = new Stage();
+                    stage.setTitle("Прогнозирование устойчивости предприятия");
+                    stage.setScene(scene);
+                    stage.show();
+                } else {
+                    passwordLabel.setText("Измените логин или пароль!");
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-   }
+    }
 
 }
 

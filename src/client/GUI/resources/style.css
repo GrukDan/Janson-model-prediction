@@ -3,3 +3,18 @@
     -fx-background-size: cover;
 
 }
+
+.liquidity_anchor{
+    -fx-background-image:url('back1.jpg');
+    -fx-background-size: cover;
+}
+
+.business_anchor{
+    -fx-background-image:url('back2.jpg');
+    -fx-background-size: cover;
+}
+
+.account_managment_image{
+    -fx-background-image:url('back2.jpg');
+    -fx-background-size: cover;
+}

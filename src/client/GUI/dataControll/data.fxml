@@ -9,25 +9,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="637.0" maxWidth="1176.0" minHeight="517.0" minWidth="734.0" prefHeight="607.0" prefWidth="1176.0" style="-fx-background-color: #393645; -fx-border-color: E3942C; -fx-border-width: 5; -fx-padding: 5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="643.0" maxWidth="1206.0" minHeight="517.0" minWidth="734.0" prefHeight="643.0" prefWidth="1206.0" style="-fx-background-color: #393645; -fx-border-color: E3942C; -fx-border-width: 5; -fx-padding: 5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.GUI.dataControll.DataController">
    <children>
-      <TableView fx:id="table" layoutX="8.0" layoutY="59.0" prefHeight="389.0" prefWidth="1155.0">
+      <TableView fx:id="table" layoutX="9.0" layoutY="24.0" prefHeight="429.0" prefWidth="1189.0">
         <columns>
-          <TableColumn fx:id="colDate" prefWidth="75.0" text="Дата" />
-          <TableColumn fx:id="colKacca" prefWidth="75.0" text="Касса" />
-            <TableColumn fx:id="colRaschChet" prefWidth="75.0" text="Рассч.счет" />
-            <TableColumn fx:id="colValChet" prefWidth="75.0" text="Валют.счет" />
-            <TableColumn fx:id="colUstavCapital" prefWidth="75.0" text="Уставн.капитал" />
-            <TableColumn fx:id="colNeraspPrib" prefWidth="75.0" text="Нераспределенная прибыль" />
-            <TableColumn fx:id="colReserv" prefWidth="75.0" text="Резервы" />
-            <TableColumn fx:id="colAmmortFond" prefWidth="75.0" text="Амморт.фонд" />
-            <TableColumn fx:id="colDebit" prefWidth="75.0" text="Дебит" />
-            <TableColumn fx:id="colZennyiBumagi" prefWidth="75.0" text="Ценные бумаги" />
-            <TableColumn fx:id="colKratkDolg" prefWidth="75.0" text="Краткосрочные задолжности" />
-            <TableColumn fx:id="colDolgDolg" prefWidth="75.0" text="Долгосрочные задолжн." />
-            <TableColumn fx:id="colValutaNetto" prefWidth="75.0" text="Валюта баланса-нетто" />
-            <TableColumn fx:id="colOsnSredstva" prefWidth="84.0" text="Основные средства" />
-            <TableColumn fx:id="colDrugieInvest" prefWidth="93.0" text="Другие инвестиции" />
+          <TableColumn fx:id="colDate" onEditCommit="#dateChanged" prefWidth="75.0" text="Дата" />
+          <TableColumn fx:id="colKacca" onEditCommit="#kaccaChanged" prefWidth="75.0" text="Касса" />
+            <TableColumn fx:id="colRaschChet" onEditCommit="#raschetChanged" prefWidth="75.0" text="Рассч.счет" />
+            <TableColumn fx:id="colValChet" onEditCommit="#valChetChanged" prefWidth="75.0" text="Валют.счет" />
+            <TableColumn fx:id="colUstavCapital" onEditCommit="#ustavCapitalChanged" prefWidth="75.0" text="Уставн.капитал" />
+            <TableColumn fx:id="colNeraspPrib" onEditCommit="#neraspredPribylChanged" prefWidth="75.0" text="Нераспределенная прибыль" />
+            <TableColumn fx:id="colReserv" onEditCommit="#reservChanged" prefWidth="75.0" text="Резервы" />
+            <TableColumn fx:id="colAmmortFond" onEditCommit="#ammortFondChanged" prefWidth="75.0" text="Амморт.фонд" />
+            <TableColumn fx:id="colDebit" onEditCommit="#debitChanged" prefWidth="75.0" text="Дебит" />
+            <TableColumn fx:id="colZennyiBumagi" onEditCommit="#zennyiBumagiChanged" prefWidth="75.0" text="Ценные бумаги" />
+            <TableColumn fx:id="colKratkDolg" onEditCommit="#kratkDolgChanged" prefWidth="75.0" text="Краткосрочные задолжности" />
+            <TableColumn fx:id="colDolgDolg" onEditCommit="#dolgDolgChanged" prefWidth="75.0" text="Долгосрочные задолжн." />
+            <TableColumn fx:id="colValutaNetto" onEditCommit="#valutaNettoChanged" prefWidth="75.0" text="Валюта баланса-нетто" />
+            <TableColumn fx:id="colOsnSredstva" onEditCommit="#OsnSredstvaChanged" prefWidth="84.0" text="Основные средства" />
+            <TableColumn fx:id="colDrugieInvest" onEditCommit="#drugieInvestChanged" prefWidth="120.0" text="Другие инвестиции" />
         </columns>
       </TableView>
       <TextField fx:id="kacca" layoutX="91.0" layoutY="499.0" prefHeight="25.0" prefWidth="67.0" />
@@ -125,22 +125,22 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="addButton" layoutX="290.0" layoutY="542.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="163.0" style="-fx-background-color: F39C29; -fx-background-radius: 30; -fx-border-radius: 30;" text="Добавить" onAction="#addControl">
+      <Button fx:id="addButton" layoutX="290.0" layoutY="542.0" mnemonicParsing="false" onAction="#addControl" prefHeight="45.0" prefWidth="163.0" style="-fx-background-color: F39C29; -fx-background-radius: 30; -fx-border-radius: 30;" text="Добавить">
          <font>
             <Font name="Times New Roman Bold" size="22.0" />
          </font>
       </Button>
-      <Button fx:id="saveButton" layoutX="469.0" layoutY="542.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="163.0" style="-fx-background-color: F39C29; -fx-background-radius: 30; -fx-border-radius: 30;" text="Сохранить">
+      <Button fx:id="saveButton" layoutX="469.0" layoutY="542.0" mnemonicParsing="false" onAction="#save" prefHeight="45.0" prefWidth="163.0" style="-fx-background-color: F39C29; -fx-background-radius: 30; -fx-border-radius: 30;" text="Сохранить">
          <font>
             <Font name="Times New Roman Bold" size="22.0" />
          </font>
       </Button>
-      <Button fx:id="deleteButton" layoutX="647.0" layoutY="542.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="163.0" style="-fx-background-color: F39C29; -fx-background-radius: 30; -fx-border-radius: 30;" text="Удалить">
+      <Button fx:id="deleteButton" layoutX="647.0" layoutY="542.0" mnemonicParsing="false" onAction="#deleteControl" prefHeight="45.0" prefWidth="163.0" style="-fx-background-color: F39C29; -fx-background-radius: 30; -fx-border-radius: 30;" text="Удалить">
          <font>
             <Font name="Times New Roman Bold" size="22.0" />
          </font>
       </Button>
-      <Button fx:id="backButton" layoutX="826.0" layoutY="542.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="163.0" style="-fx-background-color: F39C29; -fx-background-radius: 30; -fx-border-radius: 30;" text="Назад">
+      <Button fx:id="backButton" layoutX="826.0" layoutY="542.0" mnemonicParsing="false" onAction="#back" prefHeight="45.0" prefWidth="163.0" style="-fx-background-color: F39C29; -fx-background-radius: 30; -fx-border-radius: 30;" text="Назад">
          <font>
             <Font name="Times New Roman Bold" size="22.0" />
          </font>
