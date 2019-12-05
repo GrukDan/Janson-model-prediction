@@ -5,12 +5,11 @@
 package client.GUI.registration;
 
 import client.Objects.Transfer;
-import client.Objects.User;
 
+import client.Objects.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -77,10 +76,14 @@ public class RegistrationController {
                 Transfer.getBw().newLine();
                 Transfer.getBw().flush();
 
-                String gsonUser = Transfer.getGson().toJson(
-                        new User(nameField.getText(),
-                                surnameField.getText(), "user",
-                                loginField.getText(), passwordField.getText()));
+                User user = new User();
+                user.setName(nameField.getText());
+                user.setSurname(surnameField.getText());
+                user.setRole("user");
+                user.setLogin(loginField.getText());
+                user.setPassword(passwordField.getText());
+
+                String gsonUser = Transfer.getGson().toJson(user);
 
                 Transfer.getBw().write(gsonUser);
                 Transfer.getBw().newLine();

@@ -1,17 +1,14 @@
 package client.GUI.dataControll;
 
-import client.GUI.homeWindow.HomeWindowController;
+import client.GUI.Account;
 import client.Objects.Record;
 import client.Objects.Transfer;
-import client.Objects.User;
-import com.google.gson.Gson;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -19,8 +16,6 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 import javafx.util.converter.DoubleStringConverter;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.time.ZoneId;
@@ -169,9 +164,6 @@ public class DataController implements Initializable {
                 list.add(new Record(record));
             }
 
-            table.setItems(list);
-            table.setEditable(true);
-
             colKacca.setCellFactory(TextFieldTableCell.<Record, Double>forTableColumn(new DoubleStringConverter()));
             colRaschChet.setCellFactory(TextFieldTableCell.<Record, Double>forTableColumn(new DoubleStringConverter()));
             colValChet.setCellFactory(TextFieldTableCell.<Record, Double>forTableColumn(new DoubleStringConverter()));
@@ -186,6 +178,19 @@ public class DataController implements Initializable {
             colValutaNetto.setCellFactory(TextFieldTableCell.<Record, Double>forTableColumn(new DoubleStringConverter()));
             colOsnSredstva.setCellFactory(TextFieldTableCell.<Record, Double>forTableColumn(new DoubleStringConverter()));
             colDrugieInvest.setCellFactory(TextFieldTableCell.<Record, Double>forTableColumn(new DoubleStringConverter()));
+
+            table.setItems(list);
+            table.setEditable(true);
+
+            if(!Account.getAccount().getRole().equalsIgnoreCase("admin")){
+                table.setEditable(false);
+                saveButton.setVisible(false);
+                saveButton.setDisable(false);
+                deleteButton.setVisible(false);
+                deleteButton.setDisable(false);
+                addButton.setVisible(false);
+                addButton.setDisable(false);
+            }
 
         } catch (Exception e) {
             infoLabel.setText("Ошибка!");
@@ -335,7 +340,6 @@ public class DataController implements Initializable {
         allItem = table.getItems();
         selectedItem = table.getSelectionModel().getSelectedItems();
         selectedItem.forEach(allItem::remove);
-
     }
 
     public void back(ActionEvent actionEvent) {

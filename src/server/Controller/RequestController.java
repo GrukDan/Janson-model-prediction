@@ -1,10 +1,12 @@
 package server.Controller;
 
-import client.Objects.User;
+import server.database.entities.User;
 import com.google.gson.Gson;
 import server.database.DatabaseHandler;
 import server.database.entities.Record;
 import server.database.entities.Result;
+import server.yansonModel.CoefficientCalculator;
+import server.yansonModel.YansonModel;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -17,13 +19,10 @@ public class RequestController {
     BufferedWriter bw;
     BufferedReader br;
     Gson gson;
-    DatabaseHandler dbHandler;
-
 
     public RequestController(BufferedWriter bufferedWriter, BufferedReader bufferedReader) {
         this.bw = bufferedWriter;
         this.br = bufferedReader;
-        this.dbHandler = new DatabaseHandler();
         this.gson = new Gson();
     }
 
@@ -36,25 +35,21 @@ public class RequestController {
                     case "авторизация": {
                         String line = br.readLine();
                         User user = gson.fromJson(line, User.class);
-                        System.out.println(user.toString());
-                        User userResponse = dbHandler.getUserByLoginAndPassword(user.getLogin(), user.getPassword());
+                        User userResponse = DatabaseHandler.getDbHandler().getUserByLoginAndPassword(user.getLogin(), user.getPassword());
                         if (userResponse == null) {
                             System.out.println("Ошибка авторизации пользователя");
-                            bw.write("500"); //пользователь с таким логином и паролем не найден
-                            bw.newLine();
-                            bw.flush();
                         } else {
-                            System.out.println("Пользователь " + user.getLogin() + " авторизовался");
-                            bw.write("200"); //пользователь с таким логином и паролем авторизовался
-                            bw.newLine();
-                            bw.flush();
+                            System.out.println("Пользователь " + user.getName() + " " + user.getSurname() + " авторизовался");
                         }
+                        bw.write(gson.toJson(userResponse));
+                        bw.newLine();
+                        bw.flush();
                         break;
                     }
                     case "регистрация": {
                         String line = br.readLine();
                         User user = gson.fromJson(line, User.class);
-                        if (dbHandler.registrationUser(user)) {
+                        if (DatabaseHandler.getDbHandler().registrationUser(user)) {
                             System.out.println("Пользователь добавлен:" + user.toString());
                             bw.write("200");
                             bw.newLine();
@@ -67,14 +62,45 @@ public class RequestController {
                         }
                         break;
                     }
+                    case "редактирование аккаунта": {
+                        String line = br.readLine();
+                        User user = gson.fromJson(line, User.class);
+                        user = DatabaseHandler.getDbHandler().updateUserByIdAndLogin(user);
+
+                        if(user == null){
+                            bw.write("404");
+                            bw.newLine();
+                            bw.flush();
+
+                            bw.write(gson.toJson(user));
+                            bw.newLine();
+                            bw.flush();
+                        }
+                        else{
+                            bw.write("200");
+                            bw.newLine();
+                            bw.flush();
+
+                            bw.write(gson.toJson(user));
+                            bw.newLine();
+                            bw.flush();
+                        }
+                        break;
+                    }
+                    case "удаление аккаунта": {
+                        String line = br.readLine();
+                        User user = gson.fromJson(line, User.class);
+                        DatabaseHandler.getDbHandler().deleteUserById(user.getId().intValue());
+                        break;
+                    }
                     case "сохранение": {
                         String line = br.readLine();
                         List<Record> records = Arrays.asList(gson.fromJson(line, Record[].class));
-                        dbHandler.saveData(records);
+                        DatabaseHandler.getDbHandler().saveData(records);
                         break;
                     }
                     case "получение": {
-                        List<Record> records = dbHandler.getAll();
+                        List<Record> records = DatabaseHandler.getDbHandler().getAll();
                         Record[] recordsArray = new Record[records.size()];
                         records.toArray(recordsArray);
                         String gsonRecords = gson.toJson(recordsArray);
@@ -84,7 +110,7 @@ public class RequestController {
                         break;
                     }
                     case "получение дат": {
-                        List<Record> records = dbHandler.getAllDate();
+                        List<Record> records = DatabaseHandler.getDbHandler().getAllDate();
                         Record[] recordsArray = new Record[records.size()];
                         records.toArray(recordsArray);
                         String gsonRecords = gson.toJson(recordsArray);
@@ -97,13 +123,17 @@ public class RequestController {
                         String resultRequest = br.readLine();
                         Result result = gson.fromJson(resultRequest,Result.class);
 
-                        List<Record> records = dbHandler.getAllInBetween(result.getBeginDate(),result.getEndDate());
+                        List<Record> records = DatabaseHandler.getDbHandler().getAllInBetween(result.getBeginDate(),result.getEndDate());
                         Record[] recordsArray = new Record[records.size()];
                         records.toArray(recordsArray);
-                        for(Record record:recordsArray){
-                            System.out.println();
-                            System.out.println(record);
-                        }
+                        CoefficientCalculator coefficientCalculator = new CoefficientCalculator();
+                        Result newResult = coefficientCalculator.findValues(recordsArray,result);
+                        System.out.println(newResult);
+
+                        String gsonResult = gson.toJson(newResult);
+                        bw.write(gsonResult);
+                        bw.newLine();
+                        bw.flush();
                         break;
                     }
                 }
@@ -112,7 +142,7 @@ public class RequestController {
             e.printStackTrace();
             throw new RuntimeException(e);
         } finally {
-            dbHandler.closeConnection();
+            DatabaseHandler.getDbHandler().closeConnection();
         }
     }
 }

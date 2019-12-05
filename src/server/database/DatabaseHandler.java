@@ -1,15 +1,15 @@
 package server.database;
 
-import client.Objects.User;
 import server.database.entities.*;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DatabaseHandler extends DatabaseConfig {
+public final class DatabaseHandler extends DatabaseConfig {
 
-    Connection dbConection;
+    private Connection dbConection;
+    private volatile static DatabaseHandler databaseHandler;
 
     public Connection getDbConection() {
 
@@ -26,6 +26,15 @@ public class DatabaseHandler extends DatabaseConfig {
         }
         return dbConection;
     }
+
+    public static synchronized DatabaseHandler getDbHandler() {
+        if ( databaseHandler == null ) {
+            databaseHandler = new DatabaseHandler();
+        }
+        return databaseHandler;
+    }
+
+    private DatabaseHandler(){}
 
     public boolean registrationUser(User user) {
 
@@ -147,7 +156,6 @@ public class DatabaseHandler extends DatabaseConfig {
         }
     }
 
-
     public List<Record> getAllInBetween(java.util.Date beginDate, java.util.Date endDate) {
         List<Record> records = new ArrayList<>();
         try {
@@ -189,8 +197,6 @@ public class DatabaseHandler extends DatabaseConfig {
         }
         return records;
     }
-
-
 
     public List<Record> getAll() {
         List<Record> records = new ArrayList<>();
@@ -244,15 +250,14 @@ public class DatabaseHandler extends DatabaseConfig {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
-                if (resultSet.getString(5).trim().equalsIgnoreCase(login) &
-                        resultSet.getString(6).trim().equalsIgnoreCase(password)) {
-                    user = new User(
-                            resultSet.getString(2),
-                            resultSet.getString(3),
-                            resultSet.getString(4),
-                            resultSet.getString(5),
-                            resultSet.getString(6));
-                    System.out.println(user.toString());
+                if (resultSet.getString(5).trim().equals(login) &
+                        resultSet.getString(6).trim().equals(password)) {
+                    user = new User();
+                    user.setId(resultSet.getInt(1));
+                    user.setName(resultSet.getString(2));
+                    user.setSurname(resultSet.getString(3));
+                    user.setRole(resultSet.getString(4));
+                    user.setLogin(resultSet.getString(5));
                 }
                 break;
             }
@@ -262,16 +267,57 @@ public class DatabaseHandler extends DatabaseConfig {
         return user;
     }
 
+    public User updateUserByIdAndLogin(User user) {
 
+        User resultUser = null;
+        String selectSQL = "SELECT * FROM " + UserEntity.USER_TABLE + " WHERE " +
+                UserEntity.LOGIN + "=? AND " + UserEntity.ID + " !=?";
+        try {
+            PreparedStatement preparedStatement = getDbConection().prepareStatement(selectSQL);
+            preparedStatement.setString(1, user.getLogin());
+            preparedStatement.setInt(2, user.getId());
+            ResultSet resultSet = preparedStatement.executeQuery();
 
-    public List<Record> getAllDate(){
+            if (!resultSet.next()) {
+                String updateSQL = "UPDATE " + UserEntity.USER_TABLE + " SET " +
+                        UserEntity.NAME + "=?, " + UserEntity.SURNAME + " =?, " +
+                        UserEntity.LOGIN + "=? WHERE " + UserEntity.ID + "=?";
+                preparedStatement = getDbConection().prepareStatement(updateSQL);
+                preparedStatement.setString(1, user.getName());
+                preparedStatement.setString(2, user.getSurname());
+                preparedStatement.setString(3, user.getLogin());
+                preparedStatement.setInt(4, user.getId());
+                preparedStatement.executeUpdate();
+                resultUser = user;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultUser;
+    }
+
+    public void deleteUserById(int id) {
+        String deleteSQL = "DELETE FROM " + UserEntity.USER_TABLE + " WHERE " + UserEntity.ID + "=?";
+
+        try {
+            PreparedStatement preparedStatement = getDbConection().prepareStatement(deleteSQL);
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public List<Record> getAllDate() {
         List<Record> recordList = new ArrayList<>();
-        try{
+        try {
             String selectSQL = "SELECT " + FundEntity.DATE + " FROM " + FundEntity.FUND_TABLE;
             PreparedStatement preparedStatement = getDbConection().prepareStatement(selectSQL);
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 Record record = new Record();
                 record.setDate(new java.util.Date(resultSet.getDate(1).getTime()));
                 recordList.add(record);

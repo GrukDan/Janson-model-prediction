@@ -51,11 +51,47 @@ public class LiquidityRatios {
     }
 
     public void koeffAbsolytnyLikvidnosti(ActionEvent actionEvent) {
+        koeffAbsolytnyLikvidnostiButton.getScene().getWindow().hide();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("coefficients/absoluteLliquidityRatio/AbsoluteLliquidityRatio.fxml"));
+        try {
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setTitle("Прогнозирование устойчивости предприятия");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void obshiKoeffLikvidnosti(ActionEvent actionEvent) {
+        obshiKoeffLikvidnostiButton.getScene().getWindow().hide();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("coefficients/totalLiquidityRatio/TotalLiquidityRatio.fxml"));
+        try {
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setTitle("Прогнозирование устойчивости предприятия");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void utoshnKoeffLikvidnosti(ActionEvent actionEvent) {
+        utoshnKoeffLikvidnostiButton.getScene().getWindow().hide();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("coefficients/refinedLiquidityRatio/RefinedLiquidityRatio.fxml"));
+        try {
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setTitle("Прогнозирование устойчивости предприятия");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -4,6 +4,7 @@ package client.GUI.logIn;
  * Sample Skeleton for 'logIn.fxml' Controller Class
  */
 
+import client.GUI.Account;
 import client.Objects.Transfer;
 import client.Objects.User;
 import com.google.gson.Gson;
@@ -74,7 +75,9 @@ public class LogInController {
                 Transfer.getBw().flush();
 
                 String response = Transfer.getBr().readLine();
-                if (response.equals("200")) {
+                User authoriziredUser = Transfer.getGson().fromJson(response,User.class);
+                if ( authoriziredUser!=null && !authoriziredUser.getRole().equalsIgnoreCase("")) {
+                    Account.setAccount(authoriziredUser);
                     logInButton.getScene().getWindow().hide();
 
                     FXMLLoader fxmlLoader = new FXMLLoader();
@@ -85,7 +88,7 @@ public class LogInController {
                     stage.setTitle("Прогнозирование устойчивости предприятия");
                     stage.setScene(scene);
                     stage.show();
-                } else if (response.equals("500")) {
+                } else {
                     finalLabel.setText("Логин или пароль введены неверно");
                 }
             } catch (IOException e) {

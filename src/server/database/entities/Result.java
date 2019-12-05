@@ -1,27 +1,40 @@
 package server.database.entities;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class Result {
     private Date beginDate;
     private Date endDate;
-    private Double active;
-    private Double passive;
-    private Double relation;
-private String coefficient;
-    public Result(){}
+    private Double[] assets;
+    private Double[] liabilities;
+    private Double[] relation;
+    private String coefficient;
+    private int term;
+    private Double[] functionValues;
 
-    @Override
-    public String toString() {
-        return "Result{" +
-                "beginDate=" + beginDate +
-                ", endDate=" + endDate +
-                ", active=" + active +
-                ", passive=" + passive +
-                ", relation=" + relation +
-                ", coefficient='" + coefficient + '\'' +
-                '}';
+    public Result() {
     }
+
+
+
+    public int getTerm() {
+        return term;
+    }
+
+    public void setTerm(int term) {
+        this.term = term;
+    }
+
+    public Double[] getFunctionValues() {
+        return functionValues;
+    }
+
+    public void setFunctionValues(Double[] functionValues) {
+        this.functionValues = functionValues;
+    }
+
+
 
     public String getCoefficient() {
         return coefficient;
@@ -31,14 +44,7 @@ private String coefficient;
         this.coefficient = coefficient;
     }
 
-    public Result(Date beginDate, Date endDate, Double active, Double passive, Double relation, String coefficient) {
-        this.beginDate = beginDate;
-        this.endDate = endDate;
-        this.active = active;
-        this.passive = passive;
-        this.relation = relation;
-        this.coefficient = coefficient;
-    }
+
 
     public Date getBeginDate() {
         return beginDate;
@@ -56,29 +62,52 @@ private String coefficient;
         this.endDate = endDate;
     }
 
-    public Double getActive() {
-        return active;
+    @Override
+    public String toString() {
+        return "Result{" +
+                "beginDate=" + beginDate +
+                ", endDate=" + endDate +
+                ", assets=" + Arrays.toString(assets) +
+                ", liabilities=" + Arrays.toString(liabilities) +
+                ", relation=" + Arrays.toString(relation) +
+                ", coefficient='" + coefficient + '\'' +
+                ", term=" + term +
+                ", functionValues=" + Arrays.toString(functionValues) +
+                '}';
     }
 
-    public void setActive(Double active) {
-        this.active = active;
+    public Double[] getAssets() {
+        return assets;
     }
 
-    public Double getPassive() {
-        return passive;
+    public void setAssets(Double[] assets) {
+        this.assets = assets;
     }
 
-    public void setPassive(Double passive) {
-        this.passive = passive;
+    public Double[] getLiabilities() {
+        return liabilities;
     }
 
-    public Double getRelation() {
+    public void setLiabilities(Double[] liabilities) {
+        this.liabilities = liabilities;
+    }
+
+    public Double[] getRelation() {
         return relation;
     }
 
-    public void setRelation(Double relation) {
+    public void setRelation(Double[] relation) {
         this.relation = relation;
     }
 
-
+    public Result(Date beginDate, Date endDate, Double[] assets, Double[] liabilities, Double[] relation, String coefficient, int term, Double[] functionValues) {
+        this.beginDate = beginDate;
+        this.endDate = endDate;
+        this.assets = assets;
+        this.liabilities = liabilities;
+        this.relation = relation;
+        this.coefficient = coefficient;
+        this.term = term;
+        this.functionValues = functionValues;
+    }
 }

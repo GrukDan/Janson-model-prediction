@@ -1,13 +1,35 @@
 package client.Objects;
 
 public class User {
+    private Integer id;
     private String name;
     private String surname;
     private  String role;
     private String login;
     private String password;
 
-    public User(String name, String surname, String role, String login, String password) {
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", role='" + role + '\'' +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public User(Integer id, String name, String surname, String role, String login, String password) {
+        this.id = id;
         this.name = name;
         this.surname = surname;
         this.role = role;
@@ -16,18 +38,6 @@ public class User {
     }
 
     public User(){}
-
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", role='" + role + '\'' +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
 
     public String getName() {
         return name;

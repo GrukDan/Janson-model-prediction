@@ -2,60 +2,68 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/GUI/accountManagement/AccountManagement.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/GUI/accountManagement/AccountManagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/BusinessPerformance.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/BusinessPerformance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/CoefficientOfInvestmentOfOwnSources/CoefficientOfInvestmentOfOwnSources.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/CoefficientOfInvestmentOfOwnSources/CoefficientOfInvestmentOfOwnSources.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/coefficientOfFinancing/CoefficientOfFinancing.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/coefficientOfFinancing/CoefficientOfFinancing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/coefficientOfIndependence/CoefficientOfIndependence.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/coefficientOfIndependence/CoefficientOfIndependence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/financialStabilityRatio/FinancialStabilityRatio.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/financialStabilityRatio/FinancialStabilityRatio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/investmentRatio/InvestmentRatio.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/investmentRatio/InvestmentRatio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/GUI/liquidityRatios/LiquidityRatios.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/GUI/liquidityRatios/LiquidityRatios.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/Objects/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/Objects/Transfer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server/database/entities/Record.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server/database/entities/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/liquidityRatios/coefficients/absoluteLliquidityRatio/AbsoluteLliquidityRatio.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/liquidityRatios/coefficients/absoluteLliquidityRatio/AbsoluteLliquidityRatio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/liquidityRatios/coefficients/refinedLiquidityRatio/RefinedLiquidityRatio.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/liquidityRatios/coefficients/refinedLiquidityRatio/RefinedLiquidityRatio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/liquidityRatios/coefficients/totalLiquidityRatio/TotalLiquidityRatio.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/GUI/liquidityRatios/coefficients/totalLiquidityRatio/TotalLiquidityRatio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/Objects/ActiveAndPassiveSaver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/database/entities/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/yansonModel/CoefficientCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/yansonModel/YansonModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/accountManagement/AccountManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/accountManagement/AccountManagement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/accountManagement/AccountManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/accountManagement/AccountManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/BusinessPerformance.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/BusinessPerformance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/coefficients/CoefficientOfInvestmentOfOwnSources/CoefficientOfInvestmentOfOwnSources.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/coefficients/CoefficientOfInvestmentOfOwnSources/CoefficientOfInvestmentOfOwnSources.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/coefficients/CoefficientOfInvestmentOfOwnSources/CoefficientOfInvestmentOfOwnSources.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/coefficients/CoefficientOfInvestmentOfOwnSources/CoefficientOfInvestmentOfOwnSources.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/coefficients/coefficientOfFinancing/CoefficientOfFinancing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/coefficients/coefficientOfFinancing/CoefficientOfFinancing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/coefficients/coefficientOfFinancing/CoefficientOfFinancing.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/coefficients/coefficientOfFinancing/CoefficientOfFinancing.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/coefficients/coefficientOfIndependence/CoefficientOfIndependence.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/coefficients/coefficientOfIndependence/CoefficientOfIndependence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/coefficients/coefficientOfIndependence/CoefficientOfIndependence.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/coefficients/coefficientOfIndependence/CoefficientOfIndependence.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/coefficients/financialStabilityRatio/FinancialStabilityRatio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/coefficients/financialStabilityRatio/FinancialStabilityRatio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/coefficients/financialStabilityRatio/FinancialStabilityRatio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/coefficients/financialStabilityRatio/FinancialStabilityRatio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/coefficients/investmentRatio/InvestmentRatio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/coefficients/investmentRatio/InvestmentRatio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/coefficients/investmentRatio/InvestmentRatio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/businessPerformance/coefficients/investmentRatio/InvestmentRatio.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/dataControll/DataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/dataControll/DataController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/dataControll/data.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/dataControll/data.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/homeWindow/HomeWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/homeWindow/HomeWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/homeWindow/data2.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/homeWindow/homeWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/homeWindow/homeWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/liquidityRatios/LiquidityRatios.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/liquidityRatios/LiquidityRatios.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/logIn/LogInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/logIn/LogInController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/registration/RegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/registration/RegistrationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/registration/registration.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/registration/registration.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/resources/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/resources/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/Objects/Record.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/Objects/Record.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/Objects/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/Objects/Result.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/Objects/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/Objects/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/YANSON/server/Controller/RequestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/server/Controller/RequestController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/YANSON/server/database/DatabaseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/server/database/DatabaseHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/YANSON/server/database/entities/BusinessActivityParam.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/YANSON/server/database/entities/SourcesOfEquityEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/server/database/entities/SourcesOfEquityEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/server/database/entities/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/server/database/entities/Result.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YANSON/server/database/entities/UserEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/server/database/entities/UserEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/accountManagement/AccountManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/accountManagement/AccountManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/accountManagement/AccountManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/accountManagement/AccountManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/businessPerformance/BusinessPerformance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/BusinessPerformance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/CoefficientOfInvestmentOfOwnSources/CoefficientOfInvestmentOfOwnSources.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/CoefficientOfInvestmentOfOwnSources/CoefficientOfInvestmentOfOwnSources.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/CoefficientOfInvestmentOfOwnSources/CoefficientOfInvestmentOfOwnSources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/CoefficientOfInvestmentOfOwnSources/CoefficientOfInvestmentOfOwnSources.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/coefficientOfFinancing/CoefficientOfFinancing.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/coefficientOfFinancing/CoefficientOfFinancing.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/coefficientOfFinancing/CoefficientOfFinancing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/coefficientOfFinancing/CoefficientOfFinancing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/coefficientOfIndependence/CoefficientOfIndependence.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/coefficientOfIndependence/CoefficientOfIndependence.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/coefficientOfIndependence/CoefficientOfIndependence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/coefficientOfIndependence/CoefficientOfIndependence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/financialStabilityRatio/FinancialStabilityRatio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/financialStabilityRatio/FinancialStabilityRatio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/financialStabilityRatio/FinancialStabilityRatio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/financialStabilityRatio/FinancialStabilityRatio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/investmentRatio/InvestmentRatio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/investmentRatio/InvestmentRatio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/investmentRatio/InvestmentRatio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/investmentRatio/InvestmentRatio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/GUI/dataControll/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/dataControll/DataController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/GUI/dataControll/data.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/dataControll/data.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/GUI/homeWindow/HomeWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/homeWindow/HomeWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/GUI/homeWindow/data2.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/GUI/homeWindow/homeWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/homeWindow/homeWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/liquidityRatios/LiquidityRatios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/liquidityRatios/LiquidityRatios.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/GUI/logIn/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/logIn/LogInController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/GUI/registration/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/registration/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/GUI/registration/registration.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/registration/registration.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/GUI/resources/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/resources/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Objects/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Objects/Record.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/RunClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Objects/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Objects/Result.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Objects/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Objects/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/Controller/RequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Controller/RequestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/database/DatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/database/DatabaseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/database/entities/BusinessActivityParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/database/entities/BusinessActivityParamEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/database/entities/SourcesOfEquityEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/database/entities/SourcesOfEquityEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/database/entities/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/database/entities/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/database/entities/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/database/entities/UserEntity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -186,21 +194,22 @@
     <property name="project.structure.side.proportion" value="0.33563218" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Benutzer\JAVA_2sem\YANSON\src\client\GUI\businessPerformance\coefficients\coefficientOfIndependence\coefficientOfIndependence" />
-      <recent name="C:\Users\Benutzer\JAVA_2sem\YANSON\src\client\GUI\homeWindow\homeWindow" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Benutzer\JAVA_2sem\YANSON\src\client\GUI\homeWindow" />
-      <recent name="C:\Users\Benutzer\JAVA_2sem\YANSON\src\client\homeWindow" />
-      <recent name="C:\Users\Benutzer\JAVA_2sem\YANSON\src\client\logIn" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="client.Objects" />
       <recent name="server.database.entities" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Benutzer\JAVA_2sem\YANSON\src\client\GUI\liquidityRatios\coefficients\AbsoluteLliquidityRatio" />
+      <recent name="C:\Users\Benutzer\JAVA_2sem\YANSON\src\client\GUI\businessPerformance\coefficients\coefficientOfIndependence\coefficientOfIndependence" />
+      <recent name="C:\Users\Benutzer\JAVA_2sem\YANSON\src\client\GUI\homeWindow\homeWindow" />
       <recent name="C:\Users\Benutzer\JAVA_2sem\YANSON\src\client\GUI\homeWindow" />
+      <recent name="C:\Users\Benutzer\JAVA_2sem\YANSON\src\client\homeWindow" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -215,7 +224,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.RunClient">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -234,8 +243,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" singleton="false">
-      <option name="MAIN_CLASS_NAME" value="client.Main" />
+    <configuration name="RunClient" type="Application" factoryName="Application" singleton="false">
+      <option name="MAIN_CLASS_NAME" value="client.RunClient" />
       <module name="YANSON" />
       <extension name="coverage">
         <pattern>
@@ -301,8 +310,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
       <item itemvalue="Application.RunServer" />
+      <item itemvalue="Application.RunClient" />
     </list>
     <recent_temporary>
       <list>
@@ -351,6 +360,12 @@
       <workItem from="1575111135017" duration="4855000" />
       <workItem from="1575119488361" duration="22887000" />
       <workItem from="1575198128162" duration="19989000" />
+      <workItem from="1575292358294" duration="130000" />
+      <workItem from="1575314981434" duration="1965000" />
+      <workItem from="1575360396469" duration="19000" />
+      <workItem from="1575473858163" duration="3424000" />
+      <workItem from="1575484005855" duration="13974000" />
+      <workItem from="1575555078213" duration="20541000" />
     </task>
     <servers />
   </component>

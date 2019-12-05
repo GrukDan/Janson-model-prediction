@@ -55,15 +55,63 @@ public class BusinessPerformance {
     }
 
     public void koeffFinans(ActionEvent actionEvent) {
+        koeffFinansButton.getScene().getWindow().hide();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("coefficients/coefficientOfFinancing/CoefficientOfFinancing.fxml"));
+        try {
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setTitle("Прогнозирование устойчивости предприятия");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void koeffFinUstoish(ActionEvent actionEvent) {
+        koeffFinUstoishButton.getScene().getWindow().hide();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("coefficients/financialStabilityRatio/FinancialStabilityRatio.fxml"));
+        try {
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setTitle("Прогнозирование устойчивости предприятия");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void koeffInvestirov(ActionEvent actionEvent) {
+        koeffInvestirovButton.getScene().getWindow().hide();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("coefficients/investmentRatio/InvestmentRatio.fxml"));
+        try {
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setTitle("Прогнозирование устойчивости предприятия");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void koeffInvestSobstvInvest(ActionEvent actionEvent) {
+        koeffInvestSobstvInvestButton.getScene().getWindow().hide();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("coefficients/CoefficientOfInvestmentOfOwnSources/CoefficientOfInvestmentOfOwnSources.fxml"));
+        try {
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setTitle("Прогнозирование устойчивости предприятия");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void back(ActionEvent actionEvent) {

@@ -4,25 +4,27 @@
 
 package client.GUI.accountManagement;
 
+import client.GUI.Account;
+import client.Objects.Transfer;
+import client.Objects.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class AccountManagement {
+public class AccountManagement implements Initializable {
 
     @FXML // fx:id="loginField"
     private TextField loginField; // Value injected by FXMLLoader
 
-    @FXML // fx:id="passwordField"
-    private PasswordField passwordField; // Value injected by FXMLLoader
+
 
     @FXML // fx:id="saveButton"
     private Button saveButton; // Value injected by FXMLLoader
@@ -42,8 +44,8 @@ public class AccountManagement {
     @FXML // fx:id="surnameLabel"
     private Label surnameLabel; // Value injected by FXMLLoader
 
-    @FXML // fx:id="passwordLabel"
-    private Label passwordLabel; // Value injected by FXMLLoader
+    @FXML // fx:id="infoLabel"
+    private Label infoLabel; // Value injected by FXMLLoader
 
     @FXML // fx:id="backButton"
     private Button backButton; // Value injected by FXMLLoader
@@ -55,18 +57,60 @@ public class AccountManagement {
     public AccountManagement(){}
 
     public void saveAction(ActionEvent actionEvent) {
-        backButton.getScene().getWindow().hide();
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("../homeWindow/HomeWindow.fxml"));
-        try {
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = new Stage();
-            stage.setTitle("Прогнозирование устойчивости предприятия");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+
+        if(!nameField.getText().trim().equalsIgnoreCase("")){
+            nameLabel.setText("");
+            if(!surnameField.getText().trim().equalsIgnoreCase("")){
+                surnameLabel.setText("");
+                if(!loginField.getText().trim().equalsIgnoreCase("")){
+                    loginLabel.setText("");
+                    User newUser = new User();
+                    newUser.setId(Account.getAccount().getId());
+                    newUser.setName(nameField.getText().trim());
+                    newUser.setSurname(surnameField.getText().trim());
+                    newUser.setLogin(loginField.getText().trim());
+
+                    try {
+                        Transfer.getBw().write("редактирование аккаунта");
+                        Transfer.getBw().newLine();
+                        Transfer.getBw().flush();
+
+                        Transfer.getBw().write(Transfer.getGson().toJson( newUser));
+                        Transfer.getBw().newLine();
+                        Transfer.getBw().flush();
+
+                        String response = Transfer.getBr().readLine();
+                        String user = Transfer.getBr().readLine();
+                        if(response.equals("200")) {
+                            Account.setAccount(Transfer.getGson().fromJson(user,User.class));
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Аккаунт изменен!");
+                            alert.setContentText("Ваши персональные данные изменены!");
+                            alert.showAndWait();
+
+                            saveButton.getScene().getWindow().hide();
+                            FXMLLoader fxmlLoader = new FXMLLoader();
+                            fxmlLoader.setLocation(getClass().getResource("../homeWindow/HomeWindow.fxml"));
+                                Scene scene = new Scene(fxmlLoader.load());
+                                Stage stage = new Stage();
+                                stage.setTitle("Прогнозирование устойчивости предприятия");
+                                stage.setScene(scene);
+                                stage.show();
+
+                        }else{
+                            infoLabel.setText("Редактирование невозможно!");
+                        }
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }else loginLabel.setText("Введите логин!");
+            }else surnameLabel.setText("Введите фамилию!");
         }
+        else {
+            nameLabel.setText("Введите имя!");
+        }
+
     }
 
     public void backAction(ActionEvent actionEvent) {
@@ -85,10 +129,20 @@ public class AccountManagement {
     }
 
     public void deleteAction(ActionEvent actionEvent) {
-        deleteButton.getScene().getWindow().hide();
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("../logIn/logIn.fxml"));
         try {
+
+            Transfer.getBw().write("удаление аккаунта");
+            Transfer.getBw().newLine();
+            Transfer.getBw().flush();
+
+            Transfer.getBw().write(Transfer.getGson().toJson(Account.getAccount()));
+            Transfer.getBw().newLine();
+            Transfer.getBw().flush();
+
+            deleteButton.getScene().getWindow().hide();
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("../logIn/logIn.fxml"));
+
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = new Stage();
             stage.setTitle("Прогнозирование устойчивости предприятия");
@@ -97,5 +151,12 @@ public class AccountManagement {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        nameField.setText(Account.getAccount().getName());
+        surnameField.setText(Account.getAccount().getSurname());
+        loginField.setText(Account.getAccount().getLogin());
     }
 }
