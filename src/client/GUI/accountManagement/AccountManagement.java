@@ -25,7 +25,6 @@ public class AccountManagement implements Initializable {
     private TextField loginField; // Value injected by FXMLLoader
 
 
-
     @FXML // fx:id="saveButton"
     private Button saveButton; // Value injected by FXMLLoader
 
@@ -54,63 +53,88 @@ public class AccountManagement implements Initializable {
     private Button deleteButton; // Value injected by FXMLLoader
 
 
-    public AccountManagement(){}
+    public AccountManagement() {
+    }
 
     public void saveAction(ActionEvent actionEvent) {
 
-        if(!nameField.getText().trim().equalsIgnoreCase("")){
-            nameLabel.setText("");
-            if(!surnameField.getText().trim().equalsIgnoreCase("")){
-                surnameLabel.setText("");
-                if(!loginField.getText().trim().equalsIgnoreCase("")){
-                    loginLabel.setText("");
-                    User newUser = new User();
-                    newUser.setId(Account.getAccount().getId());
-                    newUser.setName(nameField.getText().trim());
-                    newUser.setSurname(surnameField.getText().trim());
-                    newUser.setLogin(loginField.getText().trim());
+        if(isVoidField()) {
+            User newUser = new User();
+            newUser.setId(Account.getAccount().getId());
+            newUser.setName(nameField.getText().trim());
+            newUser.setSurname(surnameField.getText().trim());
+            newUser.setLogin(loginField.getText().trim());
 
-                    try {
-                        Transfer.getBw().write("редактирование аккаунта");
-                        Transfer.getBw().newLine();
-                        Transfer.getBw().flush();
+            try {
+                Transfer.getBw().write("редактирование аккаунта");
+                Transfer.getBw().newLine();
+                Transfer.getBw().flush();
 
-                        Transfer.getBw().write(Transfer.getGson().toJson( newUser));
-                        Transfer.getBw().newLine();
-                        Transfer.getBw().flush();
+                Transfer.getBw().write(Transfer.getGson().toJson(newUser));
+                Transfer.getBw().newLine();
+                Transfer.getBw().flush();
 
-                        String response = Transfer.getBr().readLine();
-                        String user = Transfer.getBr().readLine();
-                        if(response.equals("200")) {
-                            Account.setAccount(Transfer.getGson().fromJson(user,User.class));
-                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                            alert.setTitle("Аккаунт изменен!");
-                            alert.setContentText("Ваши персональные данные изменены!");
-                            alert.showAndWait();
+                String response = Transfer.getBr().readLine();
+                String user = Transfer.getBr().readLine();
+                if (response.equals("200")) {
+                    Account.setAccount(Transfer.getGson().fromJson(user, User.class));
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Аккаунт изменен!");
+                    alert.setContentText("Ваши персональные данные изменены!");
+                    alert.showAndWait();
 
-                            saveButton.getScene().getWindow().hide();
-                            FXMLLoader fxmlLoader = new FXMLLoader();
-                            fxmlLoader.setLocation(getClass().getResource("../homeWindow/HomeWindow.fxml"));
-                                Scene scene = new Scene(fxmlLoader.load());
-                                Stage stage = new Stage();
-                                stage.setTitle("Прогнозирование устойчивости предприятия");
-                                stage.setScene(scene);
-                                stage.show();
+                    saveButton.getScene().getWindow().hide();
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    fxmlLoader.setLocation(getClass().getResource("../homeWindow/HomeWindow.fxml"));
+                    Scene scene = new Scene(fxmlLoader.load());
+                    Stage stage = new Stage();
+                    stage.setTitle("Прогнозирование устойчивости предприятия");
+                    stage.setScene(scene);
+                    stage.show();
 
-                        }else{
-                            infoLabel.setText("Редактирование невозможно!");
-                        }
+                } else {
+                    infoLabel.setText("Редактирование невозможно!");
+                }
 
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }else loginLabel.setText("Введите логин!");
-            }else surnameLabel.setText("Введите фамилию!");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        else {
+
+    }
+
+
+    public boolean isVoidField() {
+        if (!nameField.getText().trim().equalsIgnoreCase("")) {
+            nameLabel.setText("");
+            if (!surnameField.getText().trim().equalsIgnoreCase("")) {
+                surnameLabel.setText("");
+                if (!loginField.getText().trim().equalsIgnoreCase("")) {
+                    loginLabel.setText("");
+                    if (isValidField()) return true;
+                } else loginLabel.setText("Введите логин!");
+            } else surnameLabel.setText("Введите фамилию!");
+        } else {
             nameLabel.setText("Введите имя!");
         }
+        return false;
+    }
 
+    public boolean isValidField() {
+        if (nameField.getText().matches("^[a-zA-Z[а-яА-Я]]*$")) {
+            if (surnameField.getText().matches("^[a-zA-Z[а-яА-Я]]*$")) {
+                if (loginField.getText().matches("^[A-Za-z]([.A-Za-z0-9-]{1,18})([A-Za-z0-9])$")) {
+                    return true;
+                } else {
+                    loginLabel.setText("Введенный логин не корректен");
+                }
+            } else {
+                surnameLabel.setText("Введенная фамилия не корректна");
+            }
+        } else {
+            nameLabel.setText("Введенное имя не корректно");
+        }
+        return false;
     }
 
     public void backAction(ActionEvent actionEvent) {

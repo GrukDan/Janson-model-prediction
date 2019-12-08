@@ -19,7 +19,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 
@@ -32,10 +35,10 @@ public class FinancialStabilityRatio implements Initializable {
     private TableView<ActiveAndPassiveSaver> activeAndPassiveTable; // Value injected by FXMLLoader
 
     @FXML // fx:id="dateBegin"
-    private ListView<Date> dateBegin; // Value injected by FXMLLoader
+    private ListView<String> dateBegin; // Value injected by FXMLLoader
 
     @FXML // fx:id="dateEnd"
-    private ListView<Date> dateEnd; // Value injected by FXMLLoader
+    private ListView<String> dateEnd; // Value injected by FXMLLoader
 
     @FXML // fx:id="activeCol"
     private TableColumn<ActiveAndPassiveSaver, Double> activeCol; // Value injected by FXMLLoader
@@ -82,18 +85,25 @@ public class FinancialStabilityRatio implements Initializable {
     @FXML
     void prognosisAction(ActionEvent event) {
 
-        Date startDate = dateBegin.getSelectionModel().getSelectedItem();
-        Date finishDate = dateEnd.getSelectionModel().getSelectedItem();
+        String startDateString = dateBegin.getSelectionModel().getSelectedItem();
+        String finishDateString = dateEnd.getSelectionModel().getSelectedItem();
 
-        if (startDate == null) {
+        if (startDateString == null) {
             infoLabel.setText("Дата начала выборки не выбрана!");
         } else {
             infoLabel.setText("");
-            if (finishDate == null) {
+            if (finishDateString == null) {
                 infoLabel.setText("Дата окончания выборки не выбрана!");
             } else {
                 infoLabel.setText("");
-
+                Date startDate = null;
+                Date finishDate = null;
+                try {
+                    startDate = new SimpleDateFormat("dd.MM.yyyy").parse(startDateString);
+                    finishDate = new SimpleDateFormat("dd.MM.yyyy").parse(finishDateString);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
                 if (finishDate.getTime() < startDate.getTime()) {
                     infoLabel.setText("Дата окночания выбрана не верно!");
                 } else {
@@ -149,8 +159,8 @@ public class FinancialStabilityRatio implements Initializable {
         }
     }
 
-    ObservableList<Date> startOfSamplingList;
-    ObservableList<Date> endOfSamplingList;
+    ObservableList<String> startOfSamplingList;
+    ObservableList<String> endOfSamplingList;
     ObservableList<Double> resultList;
 
     @Override
@@ -174,9 +184,10 @@ public class FinancialStabilityRatio implements Initializable {
                 startOfSamplingList = FXCollections.observableArrayList();
                 endOfSamplingList = FXCollections.observableArrayList();
 
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
                 for (Record record : records) {
-                    startOfSamplingList.add(record.getDate());
-                    endOfSamplingList.add(record.getDate());
+                    startOfSamplingList.add(dateFormat.format(record.getDate()));
+                    endOfSamplingList.add(dateFormat.format(record.getDate()));
                 }
                 dateBegin.setItems(startOfSamplingList);
                 dateEnd.setItems(endOfSamplingList);

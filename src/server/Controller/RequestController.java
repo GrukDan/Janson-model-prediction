@@ -6,7 +6,6 @@ import server.database.DatabaseHandler;
 import server.database.entities.Record;
 import server.database.entities.Result;
 import server.yansonModel.CoefficientCalculator;
-import server.yansonModel.YansonModel;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -63,7 +63,6 @@ public class YansonModel {
         return sigmaBsquared;
     }
 
-
     public Double At(Double[] arrayOfSourceDataA, int t, boolean flag) {
         return arrayOfSourceDataA[0] * Math.pow(Math.E,
                 (((tetaA(Xcp(arrayOfSourceDataA[arrayOfSourceDataA.length-1], arrayOfSourceDataA[0], arrayOfSourceDataA.length), sigmaAsquared(arrayOfSourceDataA))
@@ -73,9 +72,9 @@ public class YansonModel {
 
     public Double Bt(Double[] arrayOfSourceDataB, int t, boolean flag) {
         return arrayOfSourceDataB[0] * Math.pow(Math.E,
-                (((tetaA(Xcp(arrayOfSourceDataB[arrayOfSourceDataB.length-1], arrayOfSourceDataB[0], arrayOfSourceDataB.length), sigmaAsquared(arrayOfSourceDataB))
-                        - 0.5*(sigmaBsquaredHatch(sigmaAsquared(arrayOfSourceDataB))))*t
-                        + (sigmaAsquared(arrayOfSourceDataB) * Z(flag)))));
+                (((tetaB(Xcp(arrayOfSourceDataB[arrayOfSourceDataB.length-1], arrayOfSourceDataB[0], arrayOfSourceDataB.length), sigmaBsquared(arrayOfSourceDataB))
+                        - 0.5*(sigmaBsquaredHatch(sigmaBsquared(arrayOfSourceDataB))))*t
+                        + (sigmaBsquared(arrayOfSourceDataB) * Z(flag)))));
     }
 
     public Double prognosisFunction(Double[] arrayOfSourceDataA,Double[] arrayOfSourceDataB,int t,boolean flag){
