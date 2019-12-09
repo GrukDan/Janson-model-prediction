@@ -4,6 +4,7 @@
 
 package client.GUI.registration;
 
+import client.GUI.Account;
 import client.Objects.Transfer;
 
 import client.Objects.User;
@@ -55,20 +56,48 @@ public class RegistrationController {
         int flag = 0;
         if (nameField.getText().trim().equalsIgnoreCase("")) {
             nameLabel.setText("Введите имя");
-            flag++;
-        } else nameLabel.setText("");
+        } else {
+            if(nameField.getText().trim().matches("^[a-zA-Z[а-яА-Я]]*$")){
+                nameLabel.setText("");
+               }
+           else {
+                flag++;
+               nameLabel.setText("Имя введено некорректно");
+            }
+        }
         if (surnameField.getText().trim().equalsIgnoreCase("")) {
-            nameLabel.setText("Введите фамилию");
-            flag++;
-        } else surnameLabel.setText("");
-        if (loginField.getText().trim().equalsIgnoreCase("")) {
+            surnameLabel.setText("Введите фамилию");
+        } else {
+            if(surnameField.getText().trim().matches("^[a-zA-Z[а-яА-Я]]*$")){
+                surnameLabel.setText("");
+                }
+            else {
+                flag++;
+                surnameLabel.setText("Фамилия введена некорректно");
+            }
+        }
+        if (loginField.getText().trim().equals("")) {
             loginLabel.setText("Введите логин");
-            flag++;
-        } else loginLabel.setText("");
+        } else {
+            if(loginField.getText().trim().matches("^[A-Za-z]([.A-Za-z0-9-]{1,18})([A-Za-z0-9])$")){
+                loginLabel.setText("");
+                }
+            else {
+                flag++;
+                loginLabel.setText("Логин введен некорректно");
+            }
+        }
         if (passwordField.getText().trim().equalsIgnoreCase("")) {
             passwordLabel.setText("Введите пароль");
-            flag++;
-        } else passwordLabel.setText("");
+        } else {
+            if(passwordField.getText().trim().matches("^[A-Za-z]([.A-Za-z0-9-]{1,18})([A-Za-z0-9])$")){
+                passwordLabel.setText("");
+                }
+            else {
+                flag++;
+                passwordLabel.setText("Пароль введен некорректно");
+            }
+        }
 
         if (flag == 0) {
             try {
@@ -91,6 +120,7 @@ public class RegistrationController {
 
                 String response = Transfer.getBr().readLine();
                 if (response.trim().equalsIgnoreCase("200")) {
+                    Account.setAccount(user);
                     logInButton.getScene().getWindow().hide();
                     FXMLLoader fxmlLoader = new FXMLLoader();
                     fxmlLoader.setLocation(getClass().getResource("../homeWindow/homeWindow.fxml"));

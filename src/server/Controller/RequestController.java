@@ -38,7 +38,7 @@ public class RequestController {
                         if (userResponse == null) {
                             System.out.println("Ошибка авторизации пользователя");
                         } else {
-                            System.out.println("Пользователь " + user.getName() + " " + user.getSurname() + " авторизовался");
+                            System.out.println("Пользователь " + userResponse.getName() + " " + userResponse.getSurname() + " авторизовался");
                         }
                         bw.write(gson.toJson(userResponse));
                         bw.newLine();

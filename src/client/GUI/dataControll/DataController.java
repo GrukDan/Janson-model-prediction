@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.ZoneId;
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class DataController implements Initializable {
 
@@ -200,132 +201,215 @@ public class DataController implements Initializable {
     public boolean addControl() {
         Record record = new Record();
         boolean flag = true;
-        do {
-            if (!date.getValue().equals("")) {
+        Pattern pattern = Pattern.compile("\\-?\\d+(\\.\\d{0,})?"); //correct pattern for both float and integer.
+        infoLabel.setText("");
+            if (date.getValue()!=null) {
                 record.setDate(Date.from(date.getValue().atStartOfDay()
                         .atZone(ZoneId.systemDefault())
                         .toInstant()));
             } else {
-                flag = !flag;
-                break;
-            }
+                infoLabel.setText("Введите дату");
+                flag = false;
+                            }
             if (!kacca.getText().trim().equals("")) {
-                record.setCash(Double.valueOf(kacca.getText()));
-                kacca.clear();
-                infoLabel.setText("");
+                if (pattern.matcher(kacca.getText().trim()).matches()) {
+                    record.setCash(Double.valueOf(kacca.getText()));
+
+                }else {
+                    flag = false;
+                    infoLabel.setText("Касса введена неверно!");
+                }
             } else {
-                flag = !flag;
-                break;
+                flag = false;
+                infoLabel.setText("Введите кассу!");
             }
             if (!raschetShet.getText().trim().equals("")) {
+                if (pattern.matcher(raschetShet.getText().trim()).matches()) {
                 record.setPaymentAccount(Double.valueOf(raschetShet.getText()));
-                raschetShet.clear();
-                infoLabel.setText("");
+
+                }else {
+                    flag = false;
+                    infoLabel.setText("Расчетный счет введен неверно!");
+                }
             } else {
-                flag = !flag;
-                break;
+                flag = false;
+                infoLabel.setText("Введите рассч.счет!");
             }
             if (!valytnyShet.getText().trim().equals("")) {
+                if (pattern.matcher(valytnyShet.getText().trim()).matches()) {
                 record.setCurrencyAccount(Double.valueOf(valytnyShet.getText()));
-                valytnyShet.clear();
-                infoLabel.setText("");
+
+                }else {
+                    flag = false;
+                    infoLabel.setText("Валютный счет введен неверно!");
+                }
+
             } else {
-                flag = !flag;
-                break;
+                flag = false;
+                infoLabel.setText("Введите валютный счет!");
             }
             if (!ustavCapital.getText().trim().equals("")) {
+                if (pattern.matcher(ustavCapital.getText().trim()).matches()) {
                 record.setAuthorizedCapital(Double.valueOf(ustavCapital.getText()));
-                ustavCapital.clear();
-                infoLabel.setText("");
+
+                }else {
+                    flag = false;
+                    infoLabel.setText("Уставной капитал введен неверно!");
+                }
+
             } else {
-                flag = !flag;
-                break;
+                flag = false;
+                infoLabel.setText("Введите уставной капитал!");
             }
             if (!neraspredPrib.getText().trim().equals("")) {
+                if (pattern.matcher(neraspredPrib.getText().trim()).matches()) {
                 record.setUndesterbutedProfits(Double.valueOf(neraspredPrib.getText()));
-                neraspredPrib.clear();
-                infoLabel.setText("");
+
+                }else {
+                    flag = false;
+                    infoLabel.setText("Нераспределенная прибыль введена неверно!");
+                }
+
             } else {
-                flag = !flag;
-                break;
+                flag = false;
+                infoLabel.setText("Введите нераспределенную прибыль!");
             }
             if (!reservy.getText().trim().equals("")) {
+                if (pattern.matcher(reservy.getText().trim()).matches()) {
                 record.setReserves(Double.valueOf(reservy.getText()));
-                reservy.clear();
-                infoLabel.setText("");
+
+                }else {
+                    flag = false;
+                    infoLabel.setText("Резервы введены неверно!");
+                }
+
             } else {
-                flag = !flag;
-                break;
+                flag = false;
+                infoLabel.setText("Введите резервы!");
             }
             if (!ammortFond.getText().trim().equals("")) {
+                if (pattern.matcher(ammortFond.getText().trim()).matches()) {
                 record.setSinkingFund(Double.valueOf(ammortFond.getText()));
-                ammortFond.clear();
-                infoLabel.setText("");
+
+                }else {
+                    flag = false;
+                    infoLabel.setText("Амморт. фонд введен неверно!");
+                }
+
             } else {
-                flag = !flag;
-                break;
+                flag = false;
+                infoLabel.setText("Введите амморт.фонд!");
             }
             if (!debit.getText().trim().equals("")) {
+                if (pattern.matcher(debit.getText().trim()).matches()) {
                 record.setAccountsReceivable(Double.valueOf(debit.getText()));
-                debit.clear();
-                infoLabel.setText("");
+
+                }else {
+                    flag = false;
+                    infoLabel.setText("Дебит введен неверно!");
+                }
+
             } else {
-                flag = !flag;
-                break;
+                flag = false;
+                infoLabel.setText("Введите дебит!");
             }
             if (!zennyiBumagi.getText().trim().equals("")) {
+                if (pattern.matcher(zennyiBumagi.getText().trim()).matches()) {
                 record.setSecurites(Double.valueOf(zennyiBumagi.getText()));
-                zennyiBumagi.clear();
-                infoLabel.setText("");
+
+                }else {
+                    flag = false;
+                    infoLabel.setText("Ценные бумаги введены неверно!");
+                }
+
             } else {
-                flag = !flag;
-                break;
+                flag = false;
+                infoLabel.setText("Введите ценные бумаги!");
             }
             if (!kratkDolgi.getText().trim().equals("")) {
+                if (pattern.matcher(kratkDolgi.getText().trim()).matches()) {
                 record.setShorttermDebt(Double.valueOf(kratkDolgi.getText()));
-                kratkDolgi.clear();
-                infoLabel.setText("");
+
+                }else {
+                    flag = false;
+                    infoLabel.setText("Краткосрочн. плтежи введены неверно!");
+                }
+
             } else {
-                flag = !flag;
-                break;
+                flag = false;
+                infoLabel.setText("Введите краткосрочные платежи!");
             }
             if (!dolgDolgi.getText().trim().equals("")) {
+                if (pattern.matcher(dolgDolgi.getText().trim()).matches()) {
                 record.setLongtermDebt(Double.valueOf(dolgDolgi.getText()));
-                dolgDolgi.clear();
-                infoLabel.setText("");
+
+                }else {
+                    flag = false;
+                    infoLabel.setText("Долгоср. платежи введены неверно!");
+                }
+
             } else {
-                flag = !flag;
-                break;
+                flag = false;
+                infoLabel.setText("Введите долгосрочные платежи!");
             }
             if (!valytBalansNetto.getText().trim().equals("")) {
+                if (pattern.matcher(valytBalansNetto.getText().trim()).matches()) {
                 record.setNetBalanceCurrency(Double.valueOf(valytBalansNetto.getText()));
-                valytBalansNetto.clear();
-                infoLabel.setText("");
+
+                }else {
+                    flag = false;
+                    infoLabel.setText("Баланс-нетто введен неверно!");
+                }
+
             } else {
-                flag = !flag;
-                break;
+                flag = false;
+                infoLabel.setText("Введите баланс-нетто!");
             }
             if (!osnovSredstva.getText().trim().equals("")) {
+                if (pattern.matcher(osnovSredstva.getText().trim()).matches()) {
                 record.setFixedAssets(Double.valueOf(osnovSredstva.getText()));
-                osnovSredstva.clear();
-                infoLabel.setText("");
+
+                }else {
+                    flag = false;
+                    infoLabel.setText("Основные средства введены неверно!");
+                }
+
             } else {
-                flag = !flag;
-                break;
+                flag = false;
+                infoLabel.setText("Введите основные средства!");
             }
             if (!drugiyeInvest.getText().trim().equals("")) {
+                if (pattern.matcher(drugiyeInvest.getText().trim()).matches()) {
                 record.setOtherInvestments(Double.valueOf(drugiyeInvest.getText()));
-                drugiyeInvest.clear();
-                infoLabel.setText("");
+
+                }else {
+                    flag = false;
+                    infoLabel.setText("Инвестиции введены неверно!");
+                }
+
             } else {
-                flag = !flag;
-                break;
+                flag = false;
+                infoLabel.setText("Введите инвестиции!");
             }
-        } while (false);
+
         if (flag) {
             table.getItems().add(record);
-        } else
-            infoLabel.setText("Введены не все данные!");
+            infoLabel.setText("");
+            kacca.clear();
+            raschetShet.clear();
+            valytnyShet.clear();
+            ustavCapital.clear();
+            neraspredPrib.clear();
+            reservy.clear();
+            ammortFond.clear();
+            debit.clear();
+            zennyiBumagi.clear();
+            kratkDolgi.clear();
+            dolgDolgi.clear();
+            valytBalansNetto.clear();
+            osnovSredstva.clear();
+            drugiyeInvest.clear();
+        }
         return true;
     }
 

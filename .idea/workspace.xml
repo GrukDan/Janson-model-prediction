@@ -7,21 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/YANSON_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/YANSON/client/GUI/accountManagement/AccountManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YANSON/client/GUI/accountManagement/AccountManagement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/GUI/accountManagement/AccountManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/accountManagement/AccountManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/CoefficientOfInvestmentOfOwnSources/CoefficientOfInvestmentOfOwnSources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/CoefficientOfInvestmentOfOwnSources/CoefficientOfInvestmentOfOwnSources.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/coefficientOfFinancing/CoefficientOfFinancing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/coefficientOfFinancing/CoefficientOfFinancing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/coefficientOfIndependence/CoefficientOfIndependence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/coefficientOfIndependence/CoefficientOfIndependence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/financialStabilityRatio/FinancialStabilityRatio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/financialStabilityRatio/FinancialStabilityRatio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/investmentRatio/InvestmentRatio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/businessPerformance/coefficients/investmentRatio/InvestmentRatio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/GUI/liquidityRatios/coefficients/absoluteLliquidityRatio/AbsoluteLliquidityRatio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/liquidityRatios/coefficients/absoluteLliquidityRatio/AbsoluteLliquidityRatio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/GUI/liquidityRatios/coefficients/refinedLiquidityRatio/RefinedLiquidityRatio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/liquidityRatios/coefficients/refinedLiquidityRatio/RefinedLiquidityRatio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/GUI/liquidityRatios/coefficients/totalLiquidityRatio/TotalLiquidityRatio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/liquidityRatios/coefficients/totalLiquidityRatio/TotalLiquidityRatio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/dataControll/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/dataControll/DataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GUI/registration/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GUI/registration/RegistrationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/Controller/RequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Controller/RequestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/yansonModel/YansonModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/yansonModel/YansonModel.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -331,6 +320,7 @@
       <workItem from="1575745960032" duration="3003000" />
       <workItem from="1575751973076" duration="462000" />
       <workItem from="1575809184906" duration="11481000" />
+      <workItem from="1575894742907" duration="5241000" />
     </task>
     <servers />
   </component>
